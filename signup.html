@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sign Up Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+           
+        }
+
+        h2 {
+            margin-top: 30px;
+            margin-left: 50% ;
+            display: flex;
+            text-align: center;
+        }
+
+        form {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+            width: 400px;
+            margin-left:40% ;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        input[type="text"],
+        input[type="tel"],
+        input[type="email"],
+        input[type="date"],
+        select {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        input[type="radio"] {
+            margin-right: 5px;
+        }
+
+        input[type="submit"] {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <h2>Sign Up</h2>
+    <form id="phoneform">
+        <label for="fullName">Full Name:</label>
+        <input type="text" id="fullName" name="fullName" required>
+        <label for="password">Password:</label>
+        <input type="text" id="password" name="password" required>
+        <label for="mobNum">Mobile Number:</label>
+        <input type="tel" id="mobNum" name="mobNum" required>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="dob">Date of Birth:</label>
+        <input type="date" id="dob" name="dob" required>
+
+        <label>Gender:</label>
+        <input type="radio" id="male" name="gender" value="male">
+        <label for="male">Male</label>
+        <input type="radio" id="female" name="gender" value="female">
+        <label for="female">Female</label>
+        <input type="radio" id="other" name="gender" value="other">
+        <label for="other">Other</label>
+
+        <label for="subject">Subject:</label>
+        <select id="subject" name="subject">
+            <option value="phy">Physics</option>
+            <option value="chem">Chemistry</option>
+            <option value="math">Mathematics</option>
+        </select>
+
+        <input type="submit" value="Sign Up">
+    </form>
+    <script>
+        function validatePhoneNumber(phoneNumber) {
+            var phonePattern = /^\d{10}$/;
+            return phonePattern.test(phoneNumber);
+        }
+
+        document.getElementById("phoneform").addEventListener("submit", function (event) {
+            var phoneNumberInput = document.getElementById("mobNum");
+            var phoneNumber = phoneNumberInput.value;
+
+            if (!validatePhoneNumber(phoneNumber)) {
+                event.preventDefault();
+                alert("Invalid phone number. Please enter a 10-digit phone number.");
+            }
+        });
+        
+    </script>
+ <script src="fsd2.js"></script>
+</body>
+</html>

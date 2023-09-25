@@ -1,0 +1,7 @@
+
+@media screen and (max-width: 844px){
+   .cardhead{
+    display: flex;
+    flex-direction: column;   
+} 
+}
